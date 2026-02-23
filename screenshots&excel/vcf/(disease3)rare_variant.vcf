@@ -1,0 +1,4 @@
+##fileformat=VCFv4.2
+##reference=GRCh38
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+7	140753336	rs113488022	T	A	.	PASS  CLNSIG=Conflicting_classifications_of_pathogenicity;GENE=BRAF
