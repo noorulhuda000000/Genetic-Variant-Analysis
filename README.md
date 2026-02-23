@@ -1,7 +1,7 @@
 Genetic Variant Annotation Assignment
 
 Course: Special Topics in Bioinformatics
-Student: Huda
+Student: Amna Zulfiqar, Maryam Ashraf, Noor ul Huda
 Year: 2026
 
 Project Goal
