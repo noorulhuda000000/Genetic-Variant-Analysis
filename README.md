@@ -1,131 +1,114 @@
 Genetic Variant Annotation Assignment
 
 Course: Special Topics in Bioinformatics
-Student: Amna Zulfiqar, Maryam Ashraf, Noor ul Huda
+Students: Amna Zulfiqar, Maryam Ashraf, Noor ul Huda
 Year: 2026
 
-Project Goal
+Project Overview
 
-This assignment simulates a real-world genetic variant annotation workflow used in clinical and research bioinformatics labs.
+This project was designed to simulate a real-world genetic variant annotation workflow similar to what is performed in clinical genomics and research laboratories.
 
-For three selected genetic disorders, we:
+The goal was to manually investigate and interpret clinically relevant variants associated with selected genetic disorders using publicly available bioinformatics databases and tools.
 
-Identified clinically relevant variants from ClinVar
+For each disorder, we identified a representative variant and performed a complete annotation workflow, including clinical interpretation, phenotype analysis, genomic visualization, and VCF file generation.
 
-Interpreted variant evidence and classifications
+Disorders Analyzed
 
-Retrieved phenotype information from OMIM
-
-Visualized genomic context using UCSC Genome Browser
-
-Created properly formatted VCF files
-
-Documented all findings in Excel and GitHub
-
-This workflow reflects how variant interpretation is performed in rare disease and clinical genomics analysis.
-
-Diseases Selected
-
-The following three genetic disorders were analyzed:
+The following genetic disorders were included in this study:
 
 Cystic Fibrosis
 
 Isolated Ectopia Lentis
+Marfan syndrome
+Fibrodysplasia Ossificans Progressiva(rare)
+Alkaptonuria(rare)
+Galactosialidosis(rare)
 
-Fibrodysplasia Ossificans Progressiva
+For each disorder, one clinically relevant variant was selected from ClinVar for detailed analysis.
 
-Each disease includes one clinically relevant variant selected from ClinVar.
+Workflow Summary
 
-Overall Workflow
+For each selected variant, the following steps were completed:
 
-For each disease, the following steps were performed:
+Identified a clinically significant variant in ClinVar
 
-Selected a clinically relevant variant from ClinVar
+Extracted detailed variant information
 
-Extracted variant details and classification
+Reviewed clinical submissions and supporting evidence
 
-Reviewed available submissions and supporting studies
-
-Retrieved phenotype information from OMIM
+Retrieved phenotype data from OMIM
 
 Visualized genomic location using UCSC Genome Browser
 
-Created a VCF file simulating patient WES/WGS data
+Created a properly formatted VCF file
 
-Verified clinical annotation using ClinVar
+Verified annotation accuracy using ClinVar
 
-Documented findings in Excel
+Documented all findings in the provided Excel sheet
 
-Organized results in a GitHub repository
+This structured workflow reflects the typical steps involved in variant interpretation and rare disease analysis.
 
-Detailed Methodology
-Step 1 — Variant Selection (ClinVar)
+Step 1 – Variant Selection (ClinVar)
 
-Searched each disease in ClinVar.
+Each disorder was searched in ClinVar to identify a pathogenic or clinically significant variant.
 
-Selected a relevant pathogenic or clinically significant variant.
-
-Extracted:
+The following details were recorded:
 
 Gene name
 
-HGVS nomenclature
-
-Protein change
+HGVS nomenclature (cDNA and protein change)
 
 Chromosomal position (GRCh38)
 
-rsID
+rsID (if available)
+
+Variant type (missense, deletion, etc.)
 
 Clinical significance
 
+Review status
+
 Associated condition
 
-These details were entered into the Excel sheet.
+These details were entered into the Excel sheet for structured documentation.
 
-Step 2 — Variant Interpretation
+Step 2 – Variant Interpretation
 
-From the ClinVar record, the following were reviewed:
+The full ClinVar record for each variant was reviewed carefully.
+
+We examined:
 
 Number of submissions
 
-Review status
+Level of review status
 
-Molecular consequence (missense, nonsense, etc.)
+Molecular consequence
 
-Published evidence
+Supporting literature and evidence
 
-A summary explanation was written describing:
+A concise explanation was written summarizing:
 
-The molecular effect of the mutation
+The biological impact of the mutation
 
-Its impact on protein structure/function
+Its effect on protein structure or function
 
-Supporting evidence for classification
+Evidence supporting its pathogenic classification
 
-This simulates manual variant interpretation.
+This step reflects how variants are manually interpreted in clinical genomics.
 
-Step 3 — Phenotype Analysis (OMIM)
+Step 3 – Phenotype Information (OMIM)
 
-The corresponding gene entry was searched in OMIM.
+The corresponding gene entry was searched in OMIM to understand the associated phenotype.
 
-Phenotype information was reviewed.
+Key clinical features and inheritance patterns were summarized in the Excel phenotype section.
 
-Clinical features and inheritance pattern were summarized in the Excel phenotype field.
+This step connects the molecular variant to its clinical presentation.
 
-This step connects genotype to clinical presentation.
+Step 4 – UCSC Genome Browser Visualization
 
-Step 4 — UCSC Genome Browser Analysis
+Each variant was visualized in the UCSC Genome Browser using the GRCh38 human genome assembly.
 
-Purpose: Visualize the variant in genomic context.
-
-Steps performed:
-
-Selected Human Genome assembly GRCh38.
-
-Entered chromosomal coordinates.
-
-Enabled tracks:
+Relevant tracks enabled included:
 
 ClinVar
 
@@ -133,71 +116,72 @@ dbSNP
 
 RefSeq Genes
 
-Pathogenicity prediction tracks (AlphaMissense, RAVEL where applicable)
+Pathogenicity prediction tracks (AlphaMissense and RAVEL, where applicable)
 
-Captured screenshots showing variant position within gene.
+Screenshots were captured showing the genomic context of each variant and stored in organized folders within the repository.
 
-Screenshots are stored in organized folders.
+Step 5 – VCF File Creation
 
-Step 5 — VCF File Creation
+For each variant, a Variant Call Format (VCF) file was manually created using the standard VCFv4.2 format.
 
-A Variant Call Format (VCF) file was manually created for each disease variant using the standard format:
+Each file includes:
 
-##fileformat=VCFv4.2
-##reference=GRCh38
-#CHROM  POS  ID  REF  ALT  QUAL  FILTER  INFO
+File format declaration
 
-Each VCF file simulates how a variant would appear in real patient WES/WGS sequencing data.
+Reference genome version
 
-Step 6 — ClinVar Annotation Verification
+Chromosome number
 
-Each variant was queried using its rsID or genomic coordinates in ClinVar Variation Viewer to confirm:
+Genomic position
+
+Variant ID
+
+Reference and alternate alleles
+
+Filter and information fields
+
+These files simulate how the variants would appear in actual patient WES or WGS data.
+
+Step 6 – ClinVar Verification
+
+Each variant was rechecked using ClinVar Variation Viewer by searching via rsID or genomic coordinates.
+
+This step confirmed:
 
 Clinical significance
 
 Associated disease
 
-Supporting submissions
+Supporting clinical submissions
 
-This step validates annotation accuracy.
+This ensured consistency and annotation accuracy.
 
-📁 Repository Structure
-
-The repository is organized as follows:
-
-Assignment/
-│
-├── annotate/
-│ └── (ClinVar annotation screenshots for all three diseases)
-│
-├── ucscgenomebrowser/
-│ ├── Cystic_Fibrosis/
-│ ├── Ectopia_Lentis/
-│ └── Fibrodysplasia_Ossificans_Progressiva/
-│ (UCSC screenshots inside each folder)
-│
-├── vcf/
-│ ├── CF_variant.vcf
-│ ├── EL_variant.vcf
-│ └── FOP_variant.vcf
-│
-└── variant_data.xlsx
-
-Screenshots are stored separately to maintain clarity and avoid cluttering the Excel sheet.
-
-ACMG/AMP Interpretation
+ACMG/AMP Classification
 
 Variants were interpreted according to ACMG/AMP guidelines using available evidence such as:
 
-Variant type (loss of function, missense, etc.)
+Type of mutation
 
-Multiple clinical submissions
+Published studies
 
-Published evidence
+Multiple independent clinical submissions
 
-Computational pathogenicity predictions
+Computational prediction scores
 
-Each variant was classified accordingly (e.g., Pathogenic, Likely Pathogenic, etc.) and documented in the Excel sheet.
+Based on this evidence, each variant was classified appropriately (e.g., Pathogenic or Likely Pathogenic) and recorded in the Excel sheet.
+
+Repository Organization
+
+The repository is structured as follows:
+
+Assignment/
+│
+├── annotate/ (ClinVar verification screenshots)
+├── ucscgenomebrowser/ (UCSC screenshots organized by disease)
+├── vcf/ (VCF files for each variant)
+└── assignment#2(solved)final.xlsx
+
+This structure ensures clarity and reproducibility.
 
 Tools Used
 
@@ -207,30 +191,26 @@ OMIM
 
 UCSC Genome Browser
 
-Excel
+Microsoft Excel
 
-Notepad (for VCF creation)
+Text editor (for VCF creation)
 
 GitHub
 
-Reproducibility
-
-To reproduce this workflow:
-
-Select three genetic disorders.
-
-Identify clinically relevant variants in ClinVar.
-
-Extract and document variant details.
-
-Retrieve phenotype information from OMIM.
-
-Visualize genomic location in UCSC Genome Browser.
-
-Create VCF files in proper format.
-
-Organize results in structured folders.
-
 Conclusion
 
-This assignment demonstrates a complete manual variant annotation workflow similar to procedures used in clinical genomics and rare disease research. It strengthens skills in database interpretation, genomic visualization, variant classification, and reproducible research documentation.
+This assignment demonstrates a complete manual variant annotation workflow similar to those used in clinical genomics and rare disease research.
+
+Through this project, we gained hands-on experience in:
+
+Variant database interpretation
+
+Genotype–phenotype correlation
+
+Genomic visualization
+
+Clinical classification using ACMG/AMP guidelines
+
+Research documentation and reproducibility
+
+The workflow reflects practical bioinformatics skills relevant to both research and clinical settings.
